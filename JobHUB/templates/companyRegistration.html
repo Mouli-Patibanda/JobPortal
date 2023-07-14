@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company registration form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        *{
+         margin:0px;
+        }
+          
+     
+             #aDiv{
+                 width: 500px;
+                  height: 650px;
+                   margin: 0 auto;
+                   border: 1px solid;
+                   margin-top: -570px;
+                   position: relative;
+                   margin-left: 900px;
+                   background-color: rgb(126, 147, 165);
+             
+                 }
+     tr,td{
+         margin-top:100px;
+         position: absolute;
+         margin-left:-100px;
+     
+     }
+     input{
+         width:400px;
+         height:35px;
+     }
+     h2{
+         
+         line-height: 60px;
+         text-align: center;
+         height:60px;
+         color: aliceblue;
+         background-color:rgba(115, 185, 208, 1);
+     
+     }
+     .alert{
+       width:1518px;
+       margin-top:-10px
+       height:30px
+      }
+    </style>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <div style="background-color:rgba(117, 205, 208, 1);height:745px"></div>
+        <div id="imgbox" style="margin-top:-500px">
+           <img src="https://fontmeme.com/permalink/230613/c819d6ead9f66c6c6e6306689727104e.png"style="width:400px;height:250px;margin-top:-1px;margin-left:200px;background-color:black;">
+           <h2 style="color:black; -webkit-text-stroke: 1px orange;background-color:transparent;margin-top:-10px;margin-left:-750px;font-size:50px;">JOBHUB</h2>
+           <h2 style="color:black; -webkit-text-stroke: 0.5px orange; background-color:transparent;margin-top:-10px;margin-left:-700px;font-family:Roboto;font-size:400;">Unemployment has no room in this world</h2>
+          </div>
+          {% csrf_token %}
+      </div>
+         <div id="aDiv"><h2>REGISTRATION</h2>
+           <table>
+           <tr>
+             <td style=" top:-350px; left:240px"> 
+                   <input type="text" name="username" placeholder="User Name"required>
+               </td>
+               <br>
+             </tr>
+             <tr>
+               <td style=" top:-280px; left:240px">
+                   <input type="email" name="email" placeholder="Email"required>
+               </td>
+               <br>
+             </tr>
+             <tr>
+               <td style=" top:-210px; left:240px">
+                   <input type="text" name="mobile" placeholder="Mobile"required>
+               </td>
+               <br>
+             </tr>
+             <tr>
+               <td style=" top:-140px; left:240px">
+                   <input type="password" name="password1" placeholder="Password"required>
+               </td>
+               <br>
+             </tr>
+             <tr>
+               <td style=" top:-70px; left:240px">
+                   <input type="password" name="password2" placeholder="Confirm Password"required>
+               </td>
+               <br>
+             </tr>
+              <tr>
+                     <td style=" top:0px; left:240px">
+                        <input type="text" name="company_name" placeholder="Company Name"required>
+                    </td>
+                    <br>
+                  </tr>
+                  <tr>
+                    <td style=" top:70px; left:240px">
+                       <input type="text" name="role" placeholder="Role in Company"required>
+                   </td>
+                   <br>
+                 </tr>
+                 <tr>
+                <td style=" top:140px; left:240px">
+                   <button type='submit' style="background-color:orange ; width:90px;height:40px;font: weight 800px;font-size:15px;border-radius:10px">REGISTER</button>    </td>
+                    <td style="top:150px;left:340px;"><pre style="color:white; font-weight:500; font-size:15px">Already have an Account?</pre></td>
+                   <td style="top:150px;left:550px"><a href="{% url 'job_creation'%} "style="text-decoration:none;color:white; -webkit-text-stroke: 0.1px orange;font-weight:800;">Create a Job</a></td></td>
+              </tr>
+       </table>
+     </div>
+     {% for message in messages%}
+     <div class="alert alert-danger" role="alert">
+      {{message}}
+      {% endfor%}
+     </form>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   </body>
+   </html>
+        
+      

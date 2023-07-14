@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0px;
+       }
+         
+            #aDiv{
+                width: 500px;
+                 height: 740px;
+                  margin: 0 auto;
+                  border: 1px solid;
+                 
+                  margin-top: -553px;
+                  position: relative;
+                  margin-left: 900px;
+                  background-color: rgb(126, 147, 165);
+            
+                }
+    tr,td{
+        margin-top:40px;
+        position: absolute;
+        margin-left:-100px;
+    
+    }
+    input{
+        width:400px;
+        height:30px;
+    }
+    h1{
+        
+        line-height: 60px;
+        text-align: center;
+        height:60px;
+        color: aliceblue;
+        background-color:rgba(115, 185, 208, 1);
+    
+    }
+    
+    h3{
+        color:rgb(53, 139, 165);
+    }
+           
+        </style>
+    </head>
+    <body>
+    
+       
+            <form method="POST">
+               {% csrf_token %}
+               
+               <h1>{{myid.username}}'s PROFILE</h1>
+               <h3>First Name</h3><input type="text"  value="{{myid.first_name}}" readonly><br><br>
+               <h3>Last Name</h3><input type="text" name="last_name" value="{{ myid.last_name }}"readonly><br><br>
+               <h3>User Name</h3><input type="text" name="user_name" value="{{myid.username}}" readonly><br><br>
+               <h3>Email</h3><input type="email" name="email" value="{{myid.email }}" readonly><br><br>
+              <h3>Mobile</h3> <input type="text" name="mobile" value="{{ myid.mobile}}" readonly><br><br>
+             
+                <p> <h3>Highest Qualification</h3> {{ myid.get_Highest_Qualification_display }}</p><br><br>
+              <!-- <input type="radio" id="B.Tech"name="Highest_Qualification" value="B.Tech" style="width:30px;height:20px ">B.Tech<br>
+               <input type="radio" id="M.Tech" name="Highest_Qualification" value="M.Tech"style=" width:30px;height:20px">M.Tech<br>
+               <input type="radio" id="MCA" name="Highest_Qualification" value="MCA"style="width:30px;height:20px">MCA<br>
+               <input type="radio" id="BCA" name="Highest_Qualification" value="BCA"style="width:30px;height:20px">BCA<br>
+               <input type="radio" id="BSC" name="Highest_Qualification" value="BSC"style="width:30px;height:20px">BSC<br>   -->
+               <!-- <h3>Passwo</h3><input type="password" name="password1" placeholder="Password"required><br> -->
+               <p><h3>Resume:</h3> <a href="{{ myid.pdf_file.url }}">{{ myid.pdf_file.name }}</a></p><br>
+              <a href="{% url 'home'%}"><input type='submit' value="Back to Home"style="background-color: rgba(115, 185, 208, 1);color:white ; width:100px; height:50px"></a> 
+                
+                 
+                 
+      
+              
+           </form>
+          </body>
+          </html>
+    
+       
+    <!-- {% comment %} <div style="background-color:rgba(117, 205, 208, 1);height:745px">
+     <div id="imgbox">
+      <img src="https://fontmeme.com/permalink/230613/c819d6ead9f66c6c6e6306689727104e.png"style="width:400px;height:250px;margin-top:200px;margin-left:200px;background-color:black;">
+      <h2 style="color:black; -webkit-text-stroke: 1px orange;background-color:transparent;margin-top:-10px;margin-left:-700px;font-size:50px;">JOBHUB</h2>
+      <h2 style="color:black; -webkit-text-stroke: 0.5px orange; background-color:transparent;margin-top:-10px;margin-left:-650px;font-family:Roboto;font-size:400;">Unemployment has no room in this world</h2>
+     </div>
+      
+        <form method="POST">
+          {%csrf_token%}
+          <div id="aDiv"><h2>REGISTRATION</h2>
+            <table>
+            <tr>
+              <td style="  top:-259px; left:240px">
+                  <input type="text" name="first_name"placeholder="First Name"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td  style=" top:-215px; left:240px">
+                  <input type="text" name="last_name"placeholder="Last Name"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+             <td style=" top:-170px; left:240px"> 
+                    <input type="text" name="username" placeholder="User Name"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:-120px; left:240px">
+                    <input type="email" name="email" placeholder="email"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:-70px; left:240px">
+                    <input type="text" name="mobile" placeholder="Mobile"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:-20px; left:240px">
+                    <input type="password" name="password1" placeholder="Password"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:30px; left:240px">
+                    <input type="password" name="password2" placeholder="Confirm Password"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:80px; left:235px ">Highest_Qualification</td><br>
+                <td style=" top:100px; left:240px ">
+                    <input type="radio" id="B.Tech"name="Highest_Qualification" value="B.Tech" style="  width:30px;height:20px "><label for="B.Tech">B.Tech</label>
+                      <input type="radio" id="M.Tech" name="Highest_Qualification" value="M.Tech"style="  width:30px;height:20px"><label for="M.Tech">M.Tech</label>
+                      <input type="radio" id="MCA" name="Highest_Qualification" value="MCA"style="  width:30px;height:20px"><label for="MCA">MCA</label>
+                     <input type="radio" id="BCA" name="Highest_Qualification" value="BCA"style="  width:30px;height:20px">
+                     <label for="BCA">BCA</label>
+                     <input type="radio" id="BSC" name="Highest_Qualification" value="BSC"style="width:30px;height:20px"><label for="BCA">BSC</label>
+                    
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td style=" top:240px; left:240px">
+                    <label for="Passedout_Year">Passedout Year:</label><br>
+                    <input type="date" name="Passedout_Year"required>
+                </td>
+                <br>
+              </tr>
+              <tr>
+                <td 
+                 style=" top:307px; left:240px">
+                   Resume/CV:<br>
+                  <input type="file"name="Resume" placeholde="Resume"required>
+                </td>
+              </tr>
+              <tr>
+                <td style=" top:365px; left:240px">
+                    <input type='submit' style="background-color:orange ; width:70px;font: weight 800px;">    </td>
+                     <td style="top:370px;left:320px;color:white; font-weight:500; font-size:15px">AlreadyHaveAccount?</td>
+                    <td style="top:370px;left:470px"><a href="{% url 'user_login'%} "style="text-decoration:none;color:white; -webkit-text-stroke: 0.1px orange;font-weight:800;">LOGIN</a></td>
+                      <td>
+    
+                      
+                      </td> 
+                </tr>
+                
+               
+            
+            
+             
+            </table>
+          </div>
+        </form> 
+</body>
+</html> {% endcomment %} -->

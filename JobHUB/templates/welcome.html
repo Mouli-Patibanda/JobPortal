@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <meta http-equiv="refresh" content=3;url="user_registration.html" /> {% endcomment %}
+    <title>JobHUb</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #background{
+            
+            height:745px;
+            background-color:rgba(117, 205, 208, 1);
+            position: relative;
+        }
+      
+      #logo {
+            width: 500px;
+            height: 252px;
+       background-color: black;
+            position: absolute;
+            animation: zoom-in-zoom-out 2s ease 1;
+            left:500px;
+            top:200px
+          }
+          
+          @keyframes zoom-in-zoom-out {
+            0% {
+              transform: scale(0.5, 0.5);
+            }
+            
+            100% {
+              transform: scale(1, 1);
+            }
+          }
+          
+    </style>
+</head>
+<body>
+    <div id="background">
+     <!-- <h1>Job<span style="color:black;  -webkit-text-stroke: 2px orange">hub</span></h1> -->
+     <div id="logo"> 
+     <img src="https://fontmeme.com/permalink/230613/c819d6ead9f66c6c6e6306689727104e.png" style="width: 500px;
+     height: 252px;">
+   </div>
+    </div>
+    <script>
+      var timer = setTimeout(function() {
+          window.location='index/'
+      }, 3000);
+  </script>
+</body>
+</html>
